@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+// Kleuren
+$primary: #0366fb;
+$secondary: #323032;
+$territory: #fcfcfc;
+
+body {
+    font-family: 'Vary', Sans-Serif;
+    background-color: $territory;
+    letter-spacing: 0.5px;
+
+    h1 {
+        color: $primary;
+    }
+}
+
+.inspringing {
+    text-indent: 1em;
+}
+
+//Cards algemeen
+#container-card {
+    display: flex;
+    flex-wrap: wrap;
+
+    .cards {
+        background-color: $territory;
+        border-radius: 15px;
+        width: 312px;
+        height: 407px;
+        box-shadow: 5px 10px 12px #c8c8c8;
+        margin: 20px;
+        color: $secondary;
+    
+        #card-text {
+            margin-left: 1rem;
+        }
+
+        .card-img {
+            height: 50%;
+            width: 100%;
+        }
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}

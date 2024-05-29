@@ -1,0 +1,127 @@
+@use 'base' as *;
+@use 'component' as *;
+// Home view
+.headerHome {
+    background-image: url('@/assets/heroBackground.png');
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 580px;
+
+    #home-text {
+        margin-left: 20rem;
+        h3 {
+            color: $primary;
+            font-size: 1.5em;
+            letter-spacing: 0.2em;
+        }
+        h1 {
+            color: $secondary;
+            font-size: 5em;
+        }
+    }
+
+    #home-image {
+        width: 50%;
+    }
+    .img-hero {
+        height: 100%;
+        width: 90%;
+        margin-top: 3rem;
+        border-radius: 15px;
+    }
+}
+.mainHome {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: 2% 0 2% 25%;
+    width: 50%;
+}
+
+// Brandbook view
+#brandbook-container {
+    display: flex;
+
+    #brandbook-left {
+        width: 20%;
+
+        .zijNavigatie {
+            display: flex;
+            flex-direction: row;
+            padding: 2rem;
+            position: fixed;
+
+            .nav-sub {
+                display: none;
+            }
+            .nav-title:hover {
+                color: $primary;
+            }
+
+            .nav-title:hover + div, .nav-sub:hover {
+                display: block;
+            }
+
+            ul {
+                list-style-type: none;
+            }
+            
+            li {
+                padding-bottom: 0.5rem;
+            }
+    
+            a {
+                text-decoration: none;
+                color: $secondary;
+    
+                &:active, &:focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .page {
+        position: relative;
+        min-height: 85vh;
+    }
+}
+
+// Buttons
+.btn-primary {
+    background-color: $primary;
+    color: $territory;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    font-family: 'vary', sans-serif;
+}
+.btn-card {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 25px;
+    background-color: $primary;
+    border: none;
+    color: $territory;
+    margin: 1rem;
+}
+
+// Afbeeldingen
+.img-logo {
+    height: 100%;
+    width: 100px;
+}
+.img-logoNav {
+    height: 100%;
+    width: 30px;
+}
+.Yappa {
+    height: 100%;
+    width: 15px;
+}
