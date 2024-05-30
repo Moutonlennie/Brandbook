@@ -54,7 +54,7 @@ export default {
             <div class="cards">
                 <img class="card-img" src="@/assets/elementen.png" alt="Elementen">
                 <div id="card-text">
-                    <h1>Lettertype</h1>
+                    <h1>Elementen</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 <button class="btn-card">Ontdek</button>

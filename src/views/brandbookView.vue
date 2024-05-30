@@ -1,12 +1,12 @@
 <script>
-import { elementenStore } from '@/stores/elementen';
+import { logoStore } from '@/stores/logoStore';
 
 export default {
     data() {
-        const store = elementenStore();
+        const store = logoStore();
         return {
             store,
-            elementen: [],
+            logos: [],
             navItems: [
                 {
                     path: '/Logo',
@@ -32,19 +32,19 @@ export default {
         }
     },
     computed: {
-        elementenFromStore() {
-           return this.store.elementen
+        logosFromStore() {
+           return this.store.logos
 
         }
     },
     async created() {
-        await this.store.fetchElementen()
+        await this.store.fetchLogos()
 
     },
     watch: {
-        elementenFromStore(newValue) {
+        logosFromStore(newValue) {
             if(newValue){
-                this.elementen = newValue
+                this.logos = newValue
                 console.log(this.elementen)
             }
         }
@@ -106,6 +106,19 @@ export default {
         </div>
         <div class="page">
             <div id="brandbook-right">
+                
+
+                <div v-for="logo of logos" :key="logo.id">
+                {{ logo.title }}
+               <img :src="logo.image"> 
+            </div>
+
+
+
+
+
+
+
                 <h1>Logo</h1>
                 <h2>Hoofdlogo</h2>
                 <div id="container-card">
@@ -125,9 +138,7 @@ export default {
                         </div>
                 </div>
             </div>
-            <div v-for="element of elementen" :key="element.id">
-                {{ element.title }}
-            </div>
+
         </div>
     </div>
 </template>

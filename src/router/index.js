@@ -4,6 +4,7 @@ import brandbookView from '@/views/brandbookView.vue';
 import brandingMateriaalView from '@/views/brandingMateriaalView.vue';
 import foutjeView from '@/views/foutjeView.vue';
 import pageNotFound from '@/views/pageNotFound.vue';
+import logoAdd from '@/views//backend/logoBackView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,6 +28,11 @@ const router = createRouter({
             path: "/Foutje ingeslopen", 
             component: foutjeView,
             name: "Foutje ingeslopen"
+        },
+        {
+            path: "/Addlogo", 
+            component: logoAdd,
+            name: "Add logo"
         },
         { 
             path: "/:notFound(.*)",
