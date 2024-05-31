@@ -30,6 +30,7 @@ export default {
 </script>
 
 <template>
+<div v-if="logos.length > 0">
     <div v-for="logo of logos" :key="logo.id">
         <div class="cards">
             <img class="card-img" :src="logo.image">
@@ -39,6 +40,10 @@ export default {
             <button class="btn-card">Download</button>
         </div>
     </div>
+</div>
+<div v-else>
+    <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+</div>
     <!-- <div id="container-card">
         <div class="cards">
             <img class="card-img" src="@/assets/logo_pmo.png" alt="logo pmo">

@@ -93,6 +93,15 @@ export default {
                 <div id="container-card">
                     <cardComponent/>
                 </div>
+
+                <h2>Varianten</h2>
+                <p>Geen card</p>
+
+                <h2>Gebruik</h2>
+                <h3>Do's</h3>
+                <p>Geen card</p>
+                <h3>Don'ts</h3>
+                <p>Geen card</p>
             </div>
         </div>
     </div>
