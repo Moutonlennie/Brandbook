@@ -111,6 +111,21 @@
     color: $territory;
     margin: 1rem;
 }
+.btn-sec {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 25px;
+    background-color: $territory;
+    border: 1px solid $primary;
+    color: $primary;
+    margin: 0.5rem;
+
+    &:hover {
+        background-color: $primary;
+        color: $territory;
+        cursor: pointer;
+    }
+}
 
 // Afbeeldingen
 .img-logo {
