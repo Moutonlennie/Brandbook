@@ -106,39 +106,29 @@ export default {
         </div>
         <div class="page">
             <div id="brandbook-right">
-                
-
-                <div v-for="logo of logos" :key="logo.id">
-                    {{ logo.title }}
-                    <img :src="logo.image">
-                </div>
-
-
-
-
-
-
-
                 <h1>Logo</h1>
                 <h2>Hoofdlogo</h2>
                 <div id="container-card">
+                    <div v-for="logo of logos" :key="logo.id">
                         <div class="cards">
-                            <img class="card-img" src="@/assets/logo_pmo.png" alt="logo pmo">
-                            <div id="card-text">
-                                <h1>Logo</h1>
-                            </div>
-                            <button class="btn-card">Download</button>
+                                <img class="card-img" :src="logo.image">
+                                <div id="card-text">
+                                    <h1>{{ logo.title }}</h1>
+                                </div>
+                                <button class="btn-card">Download</button>
                         </div>
-                        <div class="cards">
-                            <img class="card-img" src="@/assets/logo_pmo.png" alt="logo pmo">
-                            <div id="card-text">
-                                <h1>Logo</h1>
-                            </div>
-                            <button class="btn-card">Download</button>
-                        </div>
+                    </div>
+                    <div class="cards">
+    <img class="card-img" src="@/assets/logo_pmo.png" alt="logo pmo">
+    <div id="card-text">
+        <h1>Logo</h1>
+    </div>
+    <button class="btn-card">Download</button>
+</div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
+
+
