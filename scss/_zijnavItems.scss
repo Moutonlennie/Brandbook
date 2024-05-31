@@ -1,0 +1,109 @@
+@use 'base' as *;
+@use 'mixins' as *;
+
+//KleurenView
+#kleuren-containterTwee {
+    margin: 0.5rem 0 1rem 0;
+    display: flex;
+
+    p {
+        font-size: 8px;
+    }
+
+    .bottom-margin {
+        margin-bottom: 1rem;
+    }
+
+    #kleuren-baby {
+        @include brandbookFlex();
+        background-color: $baby;
+    }
+    #kleuren-indigo {
+        @include brandbookFlex();
+        background-color: $indigo;
+    }
+    #kleuren-orchidee {
+        @include brandbookFlex();
+        background-color: $orchidee;
+    }
+    #kleuren-aardbei {
+        @include brandbookFlex();
+        background-color: $aardbei;
+    }
+    #kleuren-saffraan {
+        @include brandbookFlex();
+        background-color: $saffraan;
+    }
+    #kleuren-jade {
+        @include brandbookFlex();
+        background-color: $jade;
+    }
+    #kleuren-zwart {
+        @include brandbookFlex();
+        background-color: $zwart;
+    }
+}
+
+#kleuren-container {
+    margin: 0.5rem 0 1rem 0;
+    display: flex;
+
+    #kleuren-marijn {
+        @include brandbookFlex();
+        background-color: $marijn;        
+    }
+    #kleuren-grijs {
+        @include brandbookFlex();
+        border: 1px solid rgb(38, 38, 38);
+        background-color: $territory;
+        color: $secondary;
+    }
+
+    .bottom-margin {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 8px;
+
+    }
+}
+
+//TypografieView
+#koppen {
+
+    #typografieKoppen {
+        display: flex;
+
+        h4 {
+            color: $primary;
+            padding-right: 5rem;
+        }
+
+        #variatiesKoppen {
+            display: flex;
+        }
+    }
+    #titel {
+        display: flex;
+
+        h2 {
+            margin-right: 25rem;
+        }
+        #download {
+            border: 1px solid black;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            border-radius: 30px;
+            padding: 0 1rem;
+            color: $primary;
+
+            .bi-download {
+                margin: 0 0.3rem;
+                color: $secondary;
+            }
+        }
+    }
+}

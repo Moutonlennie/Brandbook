@@ -3,6 +3,8 @@ import '../scss/_component.scss';
 import '../scss/_base.scss';
 import '../scss/_main.scss';
 import '../scss/_form.scss';
+import '../scss/_zijnavItems.scss';
+import '../scss/_mixins.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { createApp } from 'vue'
