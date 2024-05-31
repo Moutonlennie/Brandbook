@@ -1,9 +1,11 @@
 <script>
 import cardComponent from '@/componenten/cardComponent.vue';
+import gebruikComponent from '@/componenten/gebruikComponent.vue';
 
 export default {
     components: {
-        cardComponent
+        cardComponent,
+        gebruikComponent
     },
     data() {
         return {
@@ -88,20 +90,33 @@ export default {
         </div>
         <div class="page">
             <div id="brandbook-right">
-                <h1>Logo</h1>
-                <h2>Hoofdlogo</h2>
-                <div id="container-card">
-                    <cardComponent/>
+                <div id="logo">
+                    <h1>Logo</h1>
+                    <h2>Hoofdlogo</h2>
+                    <div id="container-card">
+                        <cardComponent/>
+                    </div>
+
+                    <h2>Varianten</h2>
+                    <p>Geen card</p>
+
+                    <gebruikComponent/>
                 </div>
 
-                <h2>Varianten</h2>
-                <p>Geen card</p>
+                <div id="kleuren">
+                    <h1>Kleuren</h1>
+                    <h2>Merkkleuren</h2>
 
-                <h2>Gebruik</h2>
-                <h3>Do's</h3>
-                <p>Geen card</p>
-                <h3>Don'ts</h3>
-                <p>Geen card</p>
+                    <h3>Primaire</h3>
+                    <p>Geen card</p>
+
+                    <h3>Secundaire</h3>
+                    <p>Geen card</p>
+
+                    <gebruikComponent/>
+                </div>
+
+                <div id="Typografie"></div>
             </div>
         </div>
     </div>
