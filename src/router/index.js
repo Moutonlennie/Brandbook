@@ -4,7 +4,13 @@ import brandbookView from '@/views/brandbookView.vue';
 import brandingMateriaalView from '@/views/brandingMateriaalView.vue';
 import foutjeView from '@/views/foutjeView.vue';
 import pageNotFound from '@/views/pageNotFound.vue';
-import logoAdd from '@/views//backend/logoBackView.vue';
+
+// Importeer de subpagina componenten
+import elementenView from '@/views/elementenView.vue';
+import iconenView from '@/views/iconenView.vue';
+import kleurenView from '@/views/kleurenView.vue';
+import typografieView from '@/views/typografieView.vue';
+import logoView from '@/views/logoView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -17,7 +23,34 @@ const router = createRouter({
         {
             path: "/brandbook", 
             component: brandbookView,
-            name: "brandbook"
+            name: "brandbook",
+            children: [
+                {
+                    path: 'logo',
+                    component: logoView,
+                    name: "logo"
+                },
+                {
+                    path: 'kleuren',
+                    component: kleurenView,
+                    name: "kleuren"
+                },
+                {
+                    path: 'typografie',
+                    component: typografieView,
+                    name: "typografie"
+                },
+                {
+                    path: 'elementen',
+                    component: elementenView,
+                    name: "elementen"
+                },
+                {
+                    path: 'iconen',
+                    component: iconenView,
+                    name: "iconen"
+                }
+            ]
         },
         {
             path: "/Branding materiaal", 
@@ -29,15 +62,10 @@ const router = createRouter({
             component: foutjeView,
             name: "Foutje ingeslopen"
         },
-        {
-            path: "/Addlogo", 
-            component: logoAdd,
-            name: "Add logo"
-        },
         { 
             path: "/:notFound(.*)",
-            component: pageNotFound
-
+            component: pageNotFound,
+            name: "not-found"
         }
     ]
 })
