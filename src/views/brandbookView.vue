@@ -8,11 +8,11 @@ export default {
     data() {
     return {
       navItems: [
-        { name: 'logo', path: '/brandbook/logo' },
-        { name: 'kleuren', path: '/brandbook/kleuren' },
-        { name: 'typografie', path: '/brandbook/typografie' },
-        { name: 'elementen', path: '/brandbook/elementen' },
-        { name: 'iconen', path: '/brandbook/iconen' }
+        { name: 'Logo', path: '/brandbook/logo' },
+        { name: 'Kleuren', path: '/brandbook/kleuren' },
+        { name: 'Typografie', path: '/brandbook/typografie' },
+        { name: 'Elementen', path: '/brandbook/elementen' },
+        { name: 'Iconen', path: '/brandbook/iconen' }
       ]
     }
   }

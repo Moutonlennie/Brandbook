@@ -28,27 +28,27 @@ const router = createRouter({
                 {
                     path: 'logo',
                     component: logoView,
-                    name: "logo"
+                    name: "Logo"
                 },
                 {
                     path: 'kleuren',
                     component: kleurenView,
-                    name: "kleuren"
+                    name: "Kleuren"
                 },
                 {
                     path: 'typografie',
                     component: typografieView,
-                    name: "typografie"
+                    name: "Typografie"
                 },
                 {
                     path: 'elementen',
                     component: elementenView,
-                    name: "elementen"
+                    name: "Elementen"
                 },
                 {
                     path: 'iconen',
                     component: iconenView,
-                    name: "iconen"
+                    name: "Iconen"
                 }
             ]
         },
