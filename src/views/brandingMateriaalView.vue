@@ -1,11 +1,10 @@
-<template lang="">
+<script>
+export default {
+    
+}
+</script>
+
+<template>
     <h1>TEST2</h1>
-    </template>
-    <script>
-    export default {
-        
-    }
-    </script>
-    <style lang="">
-        
-    </style>
+</template>
+

@@ -45,7 +45,7 @@ export default {
         logosFromStore(newValue) {
             if(newValue){
                 this.logos = newValue
-                console.log(this.elementen)
+                console.log(this.logos)
             }
         }
     }
@@ -109,9 +109,9 @@ export default {
                 
 
                 <div v-for="logo of logos" :key="logo.id">
-                {{ logo.title }}
-               <img :src="logo.image"> 
-            </div>
+                    {{ logo.title }}
+                    <img :src="logo.image">
+                </div>
 
 
 
