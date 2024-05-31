@@ -11,15 +11,22 @@ import iconenView from '@/views/iconenView.vue';
 import kleurenView from '@/views/kleurenView.vue';
 import typografieView from '@/views/typografieView.vue';
 import logoView from '@/views/logoView.vue';
+import loginView from '@/views/loginView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { 
-            path: "/", 
-            component: homeView,
-            name: "home"
+        {
+            path: "/",
+            component: loginView,
+            name: "login"
         },
+        {
+            path: "/home", 
+            component: homeView,
+            name: "home",
+            meta: { requiresAuth: true, hideNavAndFooter: false } // Hier de meta-informatie controleren
+        },        
         {
             path: "/brandbook", 
             component: brandbookView,
@@ -68,6 +75,16 @@ const router = createRouter({
             name: "not-found"
         }
     ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+    const loggedIn = localStorage.getItem('user');
+  
+    if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
+      next('/');
+    } else {
+      next();
+    }
+  });
 
 export default router;

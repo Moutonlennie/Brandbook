@@ -1,9 +1,3 @@
-<script>
-export default {
-    
-}
-</script>
-
 <template>
     <header class="headerHome">
         <div id="home-text">
