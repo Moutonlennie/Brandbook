@@ -76,7 +76,7 @@ export default {
       <div v-if="fileName" class="file-name">Bestandsnaam: {{ fileName }}</div><br>
 
       <label for="comments">Opmerkingen:</label><br>
-      <textarea id="comments" v-model="form.comments" :class="{'error': errors.comments}" rows="10" cols="60" @focus="removePlaceholder('email')" placeholder="Een foutje ontdekt? Laat het hier weten"></textarea>
+      <textarea id="comments" v-model="form.comments" :class="{'error': errors.comments}" rows="6" cols="60" @focus="removePlaceholder('email')" placeholder="Een foutje ontdekt? Laat het hier weten"></textarea>
       <div v-if="errors.comments" class="error-message">{{ errors.comments }}</div><br>
 
       <a href="#" class="privacy">Privacy policy</a><br>

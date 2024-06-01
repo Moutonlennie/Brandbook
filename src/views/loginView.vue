@@ -16,6 +16,10 @@
             </div>
             <button class="btn-card" type="submit">Login</button>
             </form>
+            <div id="portalYappa">
+                <p>Portal by Yappa</p>
+                <img src="@/assets/YappaIcoonRed.png">
+            </div>
         </div>
         <div id="login-afbeelding">
             <img src="@/assets/login_image.png" alt="Login afbeelding">
