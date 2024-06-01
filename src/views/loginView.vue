@@ -2,17 +2,19 @@
 <template>
     <div id="login-container">
         <div id="login">
+            <img src="@/assets/logo.png" alt="Brandportal logo">
+            <h3>Brandportal</h3>
             <h1>Login</h1>
             <form @submit.prevent="login">
             <div>
-                <label for="username">Username:</label>
+                <label for="username">Gebruikersnaam:</label><br>
                 <input type="text" v-model="username" required>
             </div>
             <div>
-                <label for="password">Password:</label>
+                <label for="password">Wachtwoord:</label><br>
                 <input type="password" v-model="password" required>
             </div>
-            <button type="submit">Login</button>
+            <button class="btn-card" type="submit">Login</button>
             </form>
         </div>
         <div id="login-afbeelding">

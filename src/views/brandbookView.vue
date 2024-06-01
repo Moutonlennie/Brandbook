@@ -24,6 +24,7 @@ export default {
         <div id="brandbook-left">
             <zijNavComponent :navItems="navItems"/>
         </div>
+        
     </div>
     <router-view></router-view>
 </template>

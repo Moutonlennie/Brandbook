@@ -19,19 +19,24 @@ const router = createRouter({
         {
             path: "/",
             component: loginView,
-            name: "login"
+            name: "login",
+            meta: { hideNavAndFooter: true }
         },
         {
             path: "/home", 
             component: homeView,
             name: "home",
-            meta: { requiresAuth: true, hideNavAndFooter: false } // Hier de meta-informatie controleren
+            meta: { requiresAuth: true, hideNavAndFooter: false }
         },        
         {
             path: "/brandbook", 
             component: brandbookView,
             name: "brandbook",
             children: [
+                {
+                    path: '', // Geen specifieke pad voor brandbookView
+                    redirect: '/brandbook/logo' // Redirect naar logoView
+                },
                 {
                     path: 'logo',
                     component: logoView,
@@ -57,22 +62,26 @@ const router = createRouter({
                     component: iconenView,
                     name: "Iconen"
                 }
-            ]
+            ],
+            meta: { hideNavAndFooter: false }
         },
         {
             path: "/Branding materiaal", 
             component: brandingMateriaalView,
-            name: "Branding materiaal"
+            name: "Branding materiaal",
+            meta: { hideNavAndFooter: false }
         },
         {
             path: "/Foutje ingeslopen", 
             component: foutjeView,
-            name: "Foutje ingeslopen"
+            name: "Foutje ingeslopen",
+            meta: { hideNavAndFooter: false }
         },
         { 
             path: "/:notFound(.*)",
             component: pageNotFound,
-            name: "not-found"
+            name: "not-found",
+            meta: { hideNavAndFooter: false }
         }
     ]
 });
