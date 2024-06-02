@@ -4,7 +4,7 @@ import brandbookView from '@/views/brandbookView.vue';
 import brandingMateriaalView from '@/views/brandingMateriaalView.vue';
 import foutjeView from '@/views/foutjeView.vue';
 import pageNotFound from '@/views/pageNotFound.vue';
-
+import addlogo from '@/views/backend/logoBackView.vue';
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
 import iconenView from '@/views/iconenView.vue';
@@ -76,6 +76,11 @@ const router = createRouter({
             component: foutjeView,
             name: "Foutje ingeslopen",
             meta: { hideNavAndFooter: false }
+        },
+        {
+            path: '/addlogo',
+            component: addlogo,
+            name: "addlogo"
         },
         { 
             path: "/:notFound(.*)",

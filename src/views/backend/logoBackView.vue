@@ -33,6 +33,8 @@
             <button type="submit">Uploaden</button>
         </form>
     </div>
+
+
 </template>
 
 <script>
@@ -71,34 +73,25 @@ export default {
             ]
         }
     },
-
     methods: {
         submitForm() {
 
             if (this.image) {
-                console.log(this.title)
                 var title = this.title;
                 var type = this.type;
                 var varient = this.varient;
 
                 const reader = new FileReader()
-                console.log(this.title)
+
                 reader.readAsDataURL(this.image)
-                console.log(this.title)
                 reader.onload = () => {
                     const base64String = reader.result
-
-
-                    console.log(this.title)
                     this.store.saveNewLogo(
                         title,
                         type,
                         varient,
                         base64String
                     )
-
-
-
 
                 }
             } else {
@@ -136,7 +129,8 @@ export default {
             this.varient = ""
             this.image = null
             this.imagePreview = null
-        }
+        },
+
 
     }
 }

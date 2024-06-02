@@ -9,24 +9,13 @@ export default {
             logos: [],
         }
     },
-    computed: {
-        logosFromStore() {
-           return this.store.logos
-
+    props: {
+        logo: {
+            type:Object,
+            required: true
         }
     },
-    async created() {
-        await this.store.fetchLogos()
 
-    },
-    watch: {
-        logosFromStore(newValue) {
-            if(newValue){
-                this.logos = newValue
-                console.log(this.logos)
-            }
-        }
-    },
     methods: {
       showPopup() {
         this.isPopupVisible = true;
@@ -45,8 +34,6 @@ export default {
 </script>
 
 <template>
-<div v-if="logos.length > 0">
-    <div v-for="logo of logos" :key="logo.id">
         <div class="cards">
             <img class="card-img" :src="logo.image">
             <div id="card-text">
@@ -73,11 +60,7 @@ export default {
           <button class="btn-card" @click="hidePopup">Sluiten</button>
         </div>
 </div>
-    </div>
-</div>
-<div v-else>
-    <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
-</div>
+
 
     <!-- <div id="container-card">
         <div class="cards">
