@@ -63,7 +63,9 @@ export default {
       link.href = require(`@/assets/${imageName}`);
       link.download = imageName;
       link.click();
+      console.log(imageName);
     }
   }
 };
 </script>
+

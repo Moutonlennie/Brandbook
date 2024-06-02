@@ -22,7 +22,7 @@ export default {
             <div id="container-card">
               <cardTweeComponent
                 title="Mannetjes samen"
-                imageSrc="@/assets/elementen.png"
+                imageSrc="../src/assets/elementen.png"
                 imageAlt="Mannentjes samen"
               />
             </div>

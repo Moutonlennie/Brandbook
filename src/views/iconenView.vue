@@ -22,7 +22,7 @@ export default {
             <div id="container-card">
               <cardTweeComponent
                 title="Iconen Set"
-                imageSrc="@/assets/iconen_set.png"
+                imageSrc="../src/assets/iconen.png"
                 imageAlt="Iconen Set"
               />
               <!-- Voeg meer kaarten toe indien nodig -->
