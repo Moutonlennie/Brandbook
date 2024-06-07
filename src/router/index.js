@@ -5,6 +5,7 @@ import brandingMateriaalView from '@/views/brandingMateriaalView.vue';
 import foutjeView from '@/views/foutjeView.vue';
 import pageNotFound from '@/views/pageNotFound.vue';
 import addlogo from '@/views/backend/logoBackView.vue';
+import addElementen from '@/views/backend/elementenBackView.vue';
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
 import iconenView from '@/views/iconenView.vue';
@@ -81,6 +82,11 @@ const router = createRouter({
             path: '/addlogo',
             component: addlogo,
             name: "addlogo"
+        },
+        {
+            path: '/addelementen',
+            component: addElementen,
+            name: "addElementen"
         },
         { 
             path: "/:notFound(.*)",
