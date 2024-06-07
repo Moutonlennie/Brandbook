@@ -34,3 +34,50 @@ body {
     text-indent: 1em;
 }
 
+// Buttons
+.btn-primary {
+    background-color: $primary;
+    color: $territory;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    font-family: 'vary', sans-serif;
+}
+.btn-card {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 25px;
+    background-color: $primary;
+    border: none;
+    color: $territory;
+    margin: 1rem;
+}
+.btn-sec {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 25px;
+    background-color: $territory;
+    border: 1px solid $primary;
+    color: $primary;
+    margin: 0.5rem;
+
+    &:hover {
+        background-color: $primary;
+        color: $territory;
+        cursor: pointer;
+    }
+}
+
+// Afbeeldingen
+.img-logo {
+    height: 100%;
+    width: 100px;
+}
+.img-logoNav {
+    height: 100%;
+    width: 30px;
+}
+.Yappa {
+    height: 100%;
+    width: 15px;
+}
