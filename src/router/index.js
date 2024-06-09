@@ -13,6 +13,7 @@ import kleurenView from '@/views/kleurenView.vue';
 import typografieView from '@/views/typografieView.vue';
 import logoView from '@/views/logoView.vue';
 import loginView from '@/views/loginView.vue';
+import { path } from 'd3';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -41,7 +42,7 @@ const router = createRouter({
                 {
                     path: 'logo',
                     component: logoView,
-                    name: "Logo"
+                    name: "Logo",
                 },
                 {
                     path: 'kleuren',
@@ -94,8 +95,23 @@ const router = createRouter({
             name: "not-found",
             meta: { hideNavAndFooter: false }
         }
-    ]
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else if (to.hash) {
+            return {
+                el: to.hash,
+                behavior: 'smooth'
+            };
+        } else {
+            return { top: 0 };
+        }
+    }
 });
+
+
+
 
 router.beforeEach((to, from, next) => {
     const loggedIn = localStorage.getItem('user');

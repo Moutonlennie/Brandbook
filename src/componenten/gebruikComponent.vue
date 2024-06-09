@@ -2,7 +2,6 @@
 </script>
 
 <template>
-                    <h2>Gebruik</h2>
                     <div id="gebruik">
                         <i class="bi bi-check"></i>
                         <h3>Do's</h3>
