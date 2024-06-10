@@ -44,7 +44,7 @@ export default {
         <div v-if="isPopupVisible" class="popup-overlay">
         <div class="popup-content">
           <h2>Digitaal</h2>
-          <button class="btn-sec" @click="downloadImage('digital1.jpg')">PNG</button>
+          <button class="btn-sec" @click="downloadImage('digital1.jpg')" :download="logo.image">PNG</button>
           <button class="btn-sec" @click="downloadImage('digital2.jpg')">EPS</button>
           <button class="btn-sec" @click="downloadImage('digital3.jpg')">SVG</button>
           <button class="btn-sec" @click="downloadImage('digital3.jpg')">JPEG</button>

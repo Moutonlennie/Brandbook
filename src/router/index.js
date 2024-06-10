@@ -4,8 +4,12 @@ import brandbookView from '@/views/brandbookView.vue';
 import brandingMateriaalView from '@/views/brandingMateriaalView.vue';
 import foutjeView from '@/views/foutjeView.vue';
 import pageNotFound from '@/views/pageNotFound.vue';
+
+//Add
 import addlogo from '@/views/backend/logoBackView.vue';
 import addElementen from '@/views/backend/elementenBackView.vue';
+import addIconen from '@/views/backend/iconenBackView.vue';
+
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
 import iconenView from '@/views/iconenView.vue';
@@ -13,7 +17,6 @@ import kleurenView from '@/views/kleurenView.vue';
 import typografieView from '@/views/typografieView.vue';
 import logoView from '@/views/logoView.vue';
 import loginView from '@/views/loginView.vue';
-import { path } from 'd3';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -42,7 +45,7 @@ const router = createRouter({
                 {
                     path: 'logo',
                     component: logoView,
-                    name: "Logo",
+                    name: "Logo"
                 },
                 {
                     path: 'kleuren',
@@ -88,6 +91,11 @@ const router = createRouter({
             path: '/addelementen',
             component: addElementen,
             name: "addElementen"
+        },
+        {
+            path: '/addiconen',
+            component: addIconen,
+            name: "addIconen"
         },
         { 
             path: "/:notFound(.*)",
