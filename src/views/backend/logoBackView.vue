@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Upload Logo</h2>
+        <h1>Upload Logo</h1>
         <form @submit.prevent="submitForm">
             <div>
                 <label for="title_inp">Title:</label>
@@ -48,29 +48,7 @@ export default {
             type: "",
             varient: "",
             image: null,
-            imagePreview: null,
-            navItems: [
-                {
-                    path: '/Logo',
-                    name: 'Logo',
-                },
-                {
-                    path: "/Kleuren",
-                    name: "Kleuren",
-                },
-                {
-                    path: '/Typografie',
-                    name: 'Typografie',
-                },
-                {
-                    path: '/Elementen',
-                    name: 'Elementen',
-                },
-                {
-                    path: '/Iconen',
-                    name: 'Iconen',
-                }
-            ]
+            imagePreview: null
         }
     },
     methods: {

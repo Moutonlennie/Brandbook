@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Upload Elementen</h2>
+        <h2>Upload Visitekaartjes</h2>
         <form @submit.prevent="submitForm">
             <div>
                 <label for="title_inp">Title:</label>
@@ -22,15 +22,15 @@
 </template>
 
 <script>
-import { elementenStore } from '@/stores/elementenStore'
+import { visitekaartjesStore } from '@/stores/visitekaartjesStore'
 export default {
     data() {
-        const store = elementenStore()
+        const store = visitekaartjesStore()
         return {
             store,
             title: "",
             image: null,
-            imagePreview: null
+            imagePreview: null,
         }
     },
     methods: {
@@ -44,7 +44,7 @@ export default {
                 reader.readAsDataURL(this.image)
                 reader.onload = () => {
                     const base64String = reader.result
-                    this.store.saveNewElement(
+                    this.store.saveNewVisitekaartje(
                         title,
                         base64String
                     )
@@ -52,7 +52,7 @@ export default {
                 }
             } else {
 
-                this.store.saveNewElement(
+                this.store.saveNewVisitekaartje(
                     title,
                     null
                 )

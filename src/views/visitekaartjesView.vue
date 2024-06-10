@@ -1,33 +1,33 @@
 <script>
 import cardTweeComponent from '@/componenten/cardTweeComponent.vue';
 import gebruikComponent from '@/componenten/gebruikComponent.vue';
-import { iconenStore } from '@/stores/iconenStore';
+import { visitekaartjesStore } from '@/stores/visitekaartjesStore';
 
 export default {
     components: {
-        cardTweeComponent,
-        gebruikComponent
+        gebruikComponent,
+        cardTweeComponent
     },
     data() {
-        const store = iconenStore();
+        const store = visitekaartjesStore();
         return {
             isPopupVisible: false,
             store,
-            iconen: [],
+            visitekaartjes: [],
         }
     },
     computed: {
-        iconenFromStore() {
-            return this.store.iconen;
+        visitekaartjesFromStore() {
+            return this.store.visitekaartjes;
         },
     },
     async created() {
-        await this.store.fetchIconen();
+        await this.store.fetchVisitekaartjes();
     },
     watch: {
-        iconenFromStore(newValue) {
+        visitekaartjesFromStore(newValue) {
             if (newValue) {
-                this.iconen = newValue;
+                this.visitekaartjes = newValue;
             }
         }
     },
@@ -42,19 +42,19 @@ export default {
       <div class="page">
         <div id="brandbook-right">
           <div id="logo">
-            <h1>Iconen</h1>
-            <div v-if="iconen.length > 0">
-                        <div v-for="icoon of iconen" :key="icoon.id">
+            <h1>Visitekaartjes</h1>
+            <div v-if="visitekaartjes.length > 0">
+                        <div v-for="visitekaartje of visitekaartjes" :key="visitekaartje.id">
                             <div id="container-card">
                               <cardTweeComponent
-                                :title="icoon.title"
-                                :imageSrc="icoon.image"
+                                :title="visitekaartje.title"
+                                :imageSrc="visitekaartje.image"
                               />
                             </div>
                         </div>
                     </div>
                     <div v-else>
-                        <p>Geen card gevonden. <a href="http://localhost:5173/addiconen">Voeg een logo toe</a></p>
+                        <p>Geen card gevonden. <a href="http://localhost:5173/addvisitekaartjes">Voeg een visitekaartje toe</a></p>
                     </div>
             <br>
             <gebruikComponent/>

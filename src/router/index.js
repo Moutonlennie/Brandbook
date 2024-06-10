@@ -9,6 +9,8 @@ import pageNotFound from '@/views/pageNotFound.vue';
 import addlogo from '@/views/backend/logoBackView.vue';
 import addElementen from '@/views/backend/elementenBackView.vue';
 import addIconen from '@/views/backend/iconenBackView.vue';
+import addBrochures from '@/views/backend/brochuresBackView.vue';
+import addvisitekaartje from '@/views/backend/visitekaartjeBackView.vue';
 
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
@@ -17,6 +19,9 @@ import kleurenView from '@/views/kleurenView.vue';
 import typografieView from '@/views/typografieView.vue';
 import logoView from '@/views/logoView.vue';
 import loginView from '@/views/loginView.vue';
+
+import brochuresView from '@/views/brochuresView.vue';
+import visitekaartjesView from '@/views/visitekaartjesView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -71,9 +76,25 @@ const router = createRouter({
             meta: { hideNavAndFooter: false }
         },
         {
-            path: "/Branding materiaal", 
+            path: "/branding Materiaal", 
             component: brandingMateriaalView,
-            name: "Branding materiaal",
+            name: "branding Materiaal",
+            children: [
+                {
+                    path: '',
+                    redirect: '/branding Materiaal/brochures'
+                },
+                {
+                    path: 'brochures',
+                    component: brochuresView,
+                    name: "Brochures"
+                },
+                {
+                    path: 'visitekaartjes',
+                    component: visitekaartjesView,
+                    name: "Visitekaartjes"
+                },
+            ],
             meta: { hideNavAndFooter: false }
         },
         {
@@ -96,6 +117,16 @@ const router = createRouter({
             path: '/addiconen',
             component: addIconen,
             name: "addIconen"
+        },
+        {
+            path: '/addbrochures',
+            component: addBrochures,
+            name: "addBrochures"
+        },
+        {
+            path: '/addvisitekaartjes',
+            component: addvisitekaartje,
+            name: "addVisitekaartjes"
         },
         { 
             path: "/:notFound(.*)",
