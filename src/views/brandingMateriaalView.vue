@@ -10,8 +10,8 @@ export default {
       navItems: [
         { name: 'Brochures', path: '/branding Materiaal/brochures' },
         { name: 'Visitekaartjes', path: '/branding Materiaal/visitekaartjes' },
-        // { name: 'Typografie', path: '/brandbook/typografie' },
-        // { name: 'Elementen', path: '/brandbook/elementen' },
+        { name: 'RollUpBanner', path: '/branding Materiaal/rollUpBanners' },
+        // { name: 'Elementen', path: '/branding Materiaal/elementen' },
         // { name: 'Iconen', path: '/brandbook/iconen' }
       ]
     }

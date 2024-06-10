@@ -10,7 +10,8 @@ import addlogo from '@/views/backend/logoBackView.vue';
 import addElementen from '@/views/backend/elementenBackView.vue';
 import addIconen from '@/views/backend/iconenBackView.vue';
 import addBrochures from '@/views/backend/brochuresBackView.vue';
-import addvisitekaartje from '@/views/backend/visitekaartjeBackView.vue';
+import addVisitekaartje from '@/views/backend/visitekaartjeBackView.vue';
+import addRollUpBanner from '@/views/backend/rollUpBannersBackView.vue';
 
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
@@ -22,6 +23,7 @@ import loginView from '@/views/loginView.vue';
 
 import brochuresView from '@/views/brochuresView.vue';
 import visitekaartjesView from '@/views/visitekaartjesView.vue';
+import rollUpBannersView from '@/views/rollUpBannersView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -94,6 +96,11 @@ const router = createRouter({
                     component: visitekaartjesView,
                     name: "Visitekaartjes"
                 },
+                {
+                    path: 'rollUpBanners',
+                    component: rollUpBannersView,
+                    name: "RollUpBanners"
+                },
             ],
             meta: { hideNavAndFooter: false }
         },
@@ -125,8 +132,13 @@ const router = createRouter({
         },
         {
             path: '/addvisitekaartjes',
-            component: addvisitekaartje,
+            component: addVisitekaartje,
             name: "addVisitekaartjes"
+        },
+        {
+            path: '/addrollupbanners',
+            component: addRollUpBanner,
+            name: "addRollUpBanners"
         },
         { 
             path: "/:notFound(.*)",
