@@ -11,8 +11,7 @@ export default {
         { name: 'Brochures', path: '/branding Materiaal/brochures' },
         { name: 'Visitekaartjes', path: '/branding Materiaal/visitekaartjes' },
         { name: 'RollUpBanner', path: '/branding Materiaal/rollUpBanners' },
-        // { name: 'Elementen', path: '/branding Materiaal/elementen' },
-        // { name: 'Iconen', path: '/brandbook/iconen' }
+        { name: 'Templates', path: '/branding Materiaal/templates' }
       ]
     }
   }

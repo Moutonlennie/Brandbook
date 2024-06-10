@@ -12,6 +12,7 @@ import addIconen from '@/views/backend/iconenBackView.vue';
 import addBrochures from '@/views/backend/brochuresBackView.vue';
 import addVisitekaartje from '@/views/backend/visitekaartjeBackView.vue';
 import addRollUpBanner from '@/views/backend/rollUpBannersBackView.vue';
+import addTemplates from '@/views/backend/templatesBackView.vue';
 
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
@@ -24,6 +25,7 @@ import loginView from '@/views/loginView.vue';
 import brochuresView from '@/views/brochuresView.vue';
 import visitekaartjesView from '@/views/visitekaartjesView.vue';
 import rollUpBannersView from '@/views/rollUpBannersView.vue';
+import templatesView from '@/views/templatesView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -101,6 +103,11 @@ const router = createRouter({
                     component: rollUpBannersView,
                     name: "RollUpBanners"
                 },
+                {
+                    path: 'templates',
+                    component: templatesView,
+                    name: "Templates"
+                },
             ],
             meta: { hideNavAndFooter: false }
         },
@@ -139,6 +146,11 @@ const router = createRouter({
             path: '/addrollupbanners',
             component: addRollUpBanner,
             name: "addRollUpBanners"
+        },
+        {
+            path: '/addtemplates',
+            component: addTemplates,
+            name: "addTemplates"
         },
         { 
             path: "/:notFound(.*)",
