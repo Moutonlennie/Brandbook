@@ -4,7 +4,7 @@ export default {
         return {
             navItems: [
                 {
-                    path: '/',
+                    path: '/home',
                     name: 'Home',
                 },
                 {
@@ -12,18 +12,15 @@ export default {
                     name: "Brandbook",
                 },
                 {
-                    path: '/Branding materiaal',
+                    path: "/brandingMateriaal",
                     name: 'Branding materiaal',
                 },
                 {
-                    path: '/Foutje ingeslopen',
+                    path: '/FoutjeIngeslopen',
                     name: 'Foutje ingeslopen',
                 }
             ]
         }
-        // methods: {
-            
-        // },
     }
 }
 </script>

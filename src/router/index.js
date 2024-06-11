@@ -49,8 +49,8 @@ const router = createRouter({
             name: "brandbook",
             children: [
                 {
-                    path: '', // Geen specifieke pad voor brandbookView
-                    redirect: '/brandbook/logo' // Redirect naar logoView
+                    path: '',
+                    redirect: '/brandbook/logo'
                 },
                 {
                     path: 'logo',
@@ -81,13 +81,13 @@ const router = createRouter({
             meta: { hideNavAndFooter: false }
         },
         {
-            path: "/branding Materiaal", 
+            path: "/brandingMateriaal", 
             component: brandingMateriaalView,
-            name: "branding Materiaal",
+            name: "branding materiaal",
             children: [
                 {
                     path: '',
-                    redirect: '/branding Materiaal/brochures'
+                    redirect: '/brandingMateriaal/brochures'
                 },
                 {
                     path: 'brochures',
@@ -113,7 +113,7 @@ const router = createRouter({
             meta: { hideNavAndFooter: false }
         },
         {
-            path: "/Foutje ingeslopen", 
+            path: "/FoutjeIngeslopen", 
             component: foutjeView,
             name: "Foutje ingeslopen",
             meta: { hideNavAndFooter: false }
@@ -179,17 +179,14 @@ const router = createRouter({
     }
 });
 
-
-
-
 router.beforeEach((to, from, next) => {
     const loggedIn = localStorage.getItem('user');
-  
+
     if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
-      next('/');
+        next('/');
     } else {
-      next();
+        next();
     }
-  });
+});
 
 export default router;
