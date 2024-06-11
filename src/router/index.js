@@ -13,6 +13,7 @@ import addBrochures from '@/views/backend/brochuresBackView.vue';
 import addVisitekaartje from '@/views/backend/visitekaartjeBackView.vue';
 import addRollUpBanner from '@/views/backend/rollUpBannersBackView.vue';
 import addTemplates from '@/views/backend/templatesBackView.vue';
+import addGebruik from '@/views/backend/gebruikBackView.vue';
 
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
@@ -151,6 +152,11 @@ const router = createRouter({
             path: '/addtemplates',
             component: addTemplates,
             name: "addTemplates"
+        },
+        {
+            path: '/addgebruik',
+            component: addGebruik,
+            name: "addGebruik"
         },
         { 
             path: "/:notFound(.*)",

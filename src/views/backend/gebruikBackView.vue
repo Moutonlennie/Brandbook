@@ -1,10 +1,30 @@
 <template>
     <div>
-        <h1 class="title">Upload Elementen</h1>
+        <h1 class="title">Upload Gebruik</h1>
         <form @submit.prevent="submitForm">
             <div>
-                <label for="title_inp">Titel:</label><br>
-                <input type="text" id="title_inp" v-model="title" required />
+                <label for="description_inp">Beschrijving:</label><br>
+                <textarea type="text" id="description_inp" v-model="description" row="20" col="10" required />
+            </div>
+            <div>
+                <label for="pagina">Kies je pagina:</label>
+                <select v-model="type" name="pagina" id="pagina">
+                    <option value="logo">Logo</option>
+                    <option value="kleuren">Kleuren</option>
+                    <option value="elementen">Elementen</option>
+                    <option value="typografie">Typografie</option>
+                    <option value="visitekaartjes">Visitekaartjes</option>
+                    <option value="brochures">Brochures</option>
+                    <option value="iconen">Iconen</option>
+                    <option value="templates">Templates</option>
+                </select>
+            </div>
+            <div>
+                <label for="doDonts">Kies je pagina:</label>
+                <select v-model="juist" name="doDonts" id="doDonts">
+                    <option value="true">Do</option>
+                    <option value="false">Don'ts</option>
+                </select>
             </div>
             <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Foto</label>
@@ -17,18 +37,18 @@
             <button class="btn-card" type="submit">Uploaden</button>
         </form>
     </div>
-
-
 </template>
 
 <script>
-import { elementenStore } from '@/stores/elementenStore'
+import { gebruikStore } from '@/stores/gebruikStore'
 export default {
     data() {
-        const store = elementenStore()
+        const store = gebruikStore()
         return {
             store,
-            title: "",
+            description: "",
+            type: "",
+            juist: "",
             image: null,
             imagePreview: null
         }
@@ -37,23 +57,29 @@ export default {
         submitForm() {
 
             if (this.image) {
-                var title = this.title;
+                var description = this.description;
+                var type = this.type;
+                var juist = this.juist;
 
                 const reader = new FileReader()
 
                 reader.readAsDataURL(this.image)
                 reader.onload = () => {
                     const base64String = reader.result
-                    this.store.saveNewElement(
-                        title,
+                    this.store.saveNewGebruik(
+                        description,
+                        type,
+                        juist,
                         base64String
                     )
 
                 }
             } else {
 
-                this.store.saveNewElement(
-                    title,
+                this.store.saveNewGebruik(
+                    description,
+                    type,
+                    juist,
                     null
                 )
 
@@ -78,7 +104,9 @@ export default {
 
         },
         clearForm() {
-            this.title = ""
+            this.description = ""
+            this.type = ""
+            this.juist = ""
             this.image = null
             this.imagePreview = null
         },

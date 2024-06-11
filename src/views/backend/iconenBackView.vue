@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h2>Upload Iconen</h2>
+        <h1 class="title">Upload Iconen</h1>
         <form @submit.prevent="submitForm">
             <div>
-                <label for="title_inp">Title:</label>
+                <label for="title_inp">Titel:</label><br>
                 <input type="text" id="title_inp" v-model="title" required />
             </div>
             <div>
@@ -14,7 +14,7 @@
                 </div>
 
             </div>
-            <button type="submit">Uploaden</button>
+            <button class="btn-card" type="submit">Uploaden</button>
         </form>
     </div>
 

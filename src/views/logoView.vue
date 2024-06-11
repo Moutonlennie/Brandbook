@@ -37,7 +37,28 @@
                     </div>
                     <br>
                     <h2 id="gebruik">Gebruik</h2>
-                    <gebruikComponent />
+                    <div id="gebruik">
+                        <i class="bi bi-check"></i>
+                        <h3>Do's</h3>
+                    </div>
+                    <div v-if="welGebruik.length > 0">
+                        <div v-for="toepassing of welGebruik" :key="toepassing.id">
+                            <div id="container-card">
+                                <cardGebruik  :description="toepassing.description" :imageSrc="toepassing.image"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="gebruik">
+                        <i class="bi bi-x"></i>
+                        <h3>Don'ts</h3>
+                    </div>
+                    <div v-if="nietGebruik.length > 0">
+                        <div v-for="toepassing of nietGebruik" :key="toepassing.id">
+                            <div id="container-card">
+                                <cardGebruik  :description="toepassing.description" :imageSrc="toepassing.image"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,22 +68,30 @@
 <script>
 import cardComponent from '@/componenten/cardComponent.vue';
 import gebruikComponent from '@/componenten/gebruikComponent.vue';
+import cardGebruik from '@/componenten/cardGebruik.vue';
 import { logoStore } from '@/stores/logoStore';
+import { gebruikStore } from '@/stores/gebruikStore';
 
 export default {
     components: {
         cardComponent,
-        gebruikComponent
+        gebruikComponent,
+        cardGebruik
     },
 
     data() {
         const store = logoStore();
+        const storeGebruik = gebruikStore();
         return {
             isPopupVisible: false,
             store,
+            storeGebruik,
             logos: [],
             hoofdLogos: [],
             varientLogos: [],
+            welGebruik: [],
+            nietGebruik: [],
+            gebruik: []
         }
     },
     computed: {
@@ -75,9 +104,19 @@ export default {
         filteredVarientLogos() {
             return this.logos.filter(l => l.varient === true);
         },
+        gebruikFromStore() {
+            return this.storeGebruik.gebruik;
+        },
+        filteredWelGebruik() {
+            return this.gebruik.filter(l => l.juist === true);
+        },
+        filteredNietGebruik() {
+            return this.gebruik.filter(l => l.juist === false);
+        },
     },
     async created() {
         await this.store.fetchLogos();
+        await this.storeGebruik.fetchGebruik("logo");
     },
     watch: {
         logosFromStore(newValue) {
@@ -85,7 +124,14 @@ export default {
                 this.logos = newValue;
                 this.hoofdLogos = this.filteredHoofdLogos;
                 this.varientLogos = this.filteredVarientLogos;
-                console.log(this.logos);
+            }
+        },
+        gebruikFromStore(newValue) {
+            if (newValue) {
+                this.gebruik = newValue;
+                this.welGebruik = this.filteredWelGebruik;
+                this.nietGebruik = this.filteredNietGebruik;
+                console.log(this.welGebruik);
             }
         }
     }
