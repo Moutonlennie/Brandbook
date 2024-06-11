@@ -48,6 +48,9 @@
                             </div>
                         </div>
                     </div>
+                    <div v-else>
+                        <p>Geen card gevonden. <a href="http://localhost:5173/addgebruik">Voeg gebruik toe</a></p>
+                    </div>
                     <div id="gebruik">
                         <i class="bi bi-x"></i>
                         <h3>Don'ts</h3>

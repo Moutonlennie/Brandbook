@@ -1,37 +1,37 @@
 <template>
     <div>
         <h1 class="title">Upload Logo</h1>
-        <form @submit.prevent="submitForm">
-            <div>
-                <label for="title_inp">Titel:</label><br>
-                <input type="text" id="title_inp" v-model="title" required />
-            </div>
-            <div>
-                <label for="type">Type:</label>
-                <select id="type" v-model="type" required>
-                    <option value="">Select Type</option>
-                    <option value="LOGO">Logo</option>
-                    <option value="ICON">Icon</option>
-                </select>
-            </div>
-            <div>
-                <label for="varient">variant:</label>
-                <select id="varient" v-model="varient" required>
-                    <option value="">Select Type</option>
-                    <option value="True">Is een variant</option>
-                    <option value="False">Geen variant</option>
-                </select>
-            </div>
-            <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Foto</label>
-                <input type="file" @change="handleFileUpload" accept="image/*" />
-                <div v-if="imagePreview" class="mt-3">
-                    <img :src="imagePreview" alt="Uploaded Image" class="max-w-xs h-auto mx-auto image-preview" />
+        <div id="formulier-container">
+            <form @submit.prevent="submitForm">
+                    <label for="title_inp">Titel:</label><br>
+                    <input type="text" id="title_inp" v-model="title" required />
+                <div id="type">
+                    <label for="type">Type:</label><br>
+                    <select id="type" v-model="type" required>
+                        <option value="">Selecteer type</option>
+                        <option value="LOGO">Logo</option>
+                        <option value="ICON">Icon</option>
+                    </select>
                 </div>
+                <div id="variant">
+                    <label for="varient">Variant:</label><br>
+                    <select id="varient" v-model="varient" required>
+                        <option value="">Selecteer variant</option>
+                        <option value="True">Variant</option>
+                        <option value="False">Geen variant</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Foto</label>
+                    <input type="file" @change="handleFileUpload" accept="image/*" />
+                    <div v-if="imagePreview" class="mt-3">
+                        <img :src="imagePreview" alt="Uploaded Image" class="max-w-xs h-auto mx-auto image-preview" />
+                    </div>
 
-            </div>
-            <button class="btn-card" type="submit">Uploaden</button>
-        </form>
+                </div>
+                <button class="btn-card" type="submit">Uploaden</button>
+            </form>
+        </div>
     </div>
 
 
