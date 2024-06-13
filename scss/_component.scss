@@ -73,6 +73,7 @@ footer {
 #container-card {
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
 
     .cards {
         position: relative;

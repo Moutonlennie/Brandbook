@@ -8,10 +8,10 @@ export default {
     data() {
     return {
       navItems: [
-        { name: 'Brochures', path: '/branding Materiaal/brochures' },
-        { name: 'Visitekaartjes', path: '/branding Materiaal/visitekaartjes' },
-        { name: 'RollUpBanner', path: '/branding Materiaal/rollUpBanners' },
-        { name: 'Templates', path: '/branding Materiaal/templates' }
+        { name: 'Brochures', path: '/brandingMateriaal/brochures' },
+        { name: 'Visitekaartjes', path: '/brandingMateriaal/visitekaartjes' },
+        { name: 'RollUpBanner', path: '/brandingMateriaal/rollUpBanners' },
+        { name: 'Templates', path: '/brandingMateriaal/templates' }
       ]
     }
   }

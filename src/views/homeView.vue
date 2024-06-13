@@ -22,7 +22,7 @@
                     <h1>Logo</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <button class="btn-card">Ontdek</button>
+                <button @click="navigateTo('brandbook/logo')" class="btn-card">Ontdek</button>
             </div>
 
             <div class="cards">
@@ -31,7 +31,7 @@
                     <h1>Kleuren</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <button class="btn-card">Ontdek</button>
+                <button @click="navigateTo('brandbook/kleuren')" class="btn-card">Ontdek</button>
             </div>
 
 
@@ -41,7 +41,7 @@
                     <h1>Lettertype</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <button class="btn-card">Ontdek</button>
+                <button @click="navigateTo('brandbook/typografie')" class="btn-card">Ontdek</button>
             </div>
 
 
@@ -51,7 +51,7 @@
                     <h1>Elementen</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <button class="btn-card">Ontdek</button>
+                <button @click="navigateTo('brandbook/elementen')" class="btn-card">Ontdek</button>
             </div>
 
 
@@ -61,9 +61,19 @@
                     <h1>Iconen</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <button class="btn-card">Ontdek</button>
+                <button @click="navigateTo('brandbook/iconen')" class="btn-card">Ontdek</button>
             </div>
 
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        navigateTo(route) {
+            this.$router.push({ path: `/${route}` });
+        }
+    }
+}
+</script>
 
