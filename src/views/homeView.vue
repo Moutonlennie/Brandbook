@@ -16,6 +16,7 @@
     </main>
 
     <div id="container-card">
+        <div id="card">
             <div class="cards">
                 <img class="card-img" src="@/assets/logo_pmo.png" alt="logo pmo">
                 <div id="card-text">
@@ -63,7 +64,7 @@
                 </div>
                 <button @click="navigateTo('brandbook/iconen')" class="btn-card">Ontdek</button>
             </div>
-
+        </div>
     </div>
 </template>
 

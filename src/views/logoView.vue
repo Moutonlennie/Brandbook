@@ -4,36 +4,30 @@
         </div>
         <div class="page">
             <div id="brandbook-right">
-                <!-- Conditional Sub-navigation -->
-                <nav v-if="$route.name === 'Logo'">
-                    <router-link :to="{ hash: '#hoofdlogo' }">Hoofdlogo</router-link>
-                    <router-link :to="{ hash: '#varianten' }">Varianten</router-link>
-                    <router-link :to="{ hash: '#gebruik' }">Gebruik</router-link>
-                </nav>
                 <div id="logo">
                     <h1>Logo</h1>
                     <h2 id="hoofdlogo">Hoofdlogo</h2>
-                    <div v-if="hoofdLogos.length > 0">
-                        <div v-for="logo of hoofdLogos" :key="logo.id">
-                            <div id="container-card">
+                    <div id="container-card">
+                        <div v-if="hoofdLogos.length > 0">
+                            <div v-for="logo of hoofdLogos" :key="logo.id">
                                 <cardComponent :logo="logo" />
                             </div>
                         </div>
-                    </div>
-                    <div v-else>
-                        <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+                        <div v-else>
+                            <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+                        </div>
                     </div>
                     <br>
                     <h2 id="varianten">Varianten</h2>
-                    <div v-if="varientLogos.length > 0">
-                        <div v-for="logo of varientLogos" :key="logo.id">
-                            <div id="container-card">
+                    <div id="container-card">
+                        <div v-if="varientLogos.length > 0">
+                            <div v-for="logo of varientLogos" :key="logo.id">
                                 <cardComponent :logo="logo" />
                             </div>
                         </div>
-                    </div>
-                    <div v-else>
-                        <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+                        <div v-else>
+                            <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+                        </div>
                     </div>
                     <br>
                     <h2 id="gebruik">Gebruik</h2>
@@ -140,33 +134,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-nav {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: blue;
-    margin: 5px 0;
-}
-
-#brandbook-container {
-    display: flex;
-}
-
-#brandbook-left {
-    width: 200px; /* Adjust as necessary */
-}
-
-.page {
-    flex: 1;
-}
-
-#container-card {
-    margin: 10px 0;
-}
-</style>

@@ -5,6 +5,7 @@ export default {
         const store = logoStore();
         return {
             isPopupVisible: false,
+            showTrashIcon: false,
             store,
             logos: [],
         }
@@ -50,18 +51,25 @@ export default {
 
       // Verwijder de link na de download
       document.body.removeChild(link);
+    },
+    deleteCard() {
+      // Verwijder de kaart uit de lijst of store
+      // Hier moet je logica toevoegen om de kaart te verwijderen
+      // Bijvoorbeeld:
+      this.store.deleteLogo(this.logo.id); // Verwijder de kaart uit de store
     }
     }
 }
 </script>
 
 <template>
-        <div class="cards">
+        <div class="cards" @mouseover="showTrashIcon = true" @mouseleave="showTrashIcon = false">
             <img class="card-img" :src="logo.image">
             <div id="card-text">
                 <h1>{{ logo.title }}</h1>
             </div>
             <button class="btn-card" @click="showPopup">Download</button>
+            <i v-if="showTrashIcon" class="bi bi-trash-fill" @click="deleteCard"></i>
         </div>
         <div v-if="isPopupVisible" class="popup-overlay">
         <div class="popup-content">
@@ -82,15 +90,4 @@ export default {
           <button class="btn-card" @click="hidePopup">Sluiten</button>
         </div>
 </div>
-
-
-    <!-- <div id="container-card">
-        <div class="cards">
-            <img class="card-img" src="@/assets/logo_pmo.png" alt="logo pmo">
-            <div id="card-text">
-                <h1>Logo</h1>
-            </div>
-            <button class="btn-card">Download</button>
-        </div>
-    </div> -->
 </template>
