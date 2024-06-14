@@ -1,21 +1,20 @@
 <template>
     <div>
         <h1 class="title">Upload Brochures</h1>
+        <div id="formulier-container">
         <form class="formulier-container" @submit.prevent="submitForm">
             <div>
                 <label for="title_inp">Titel:</label><br>
                 <input type="text" id="title_inp" v-model="title" required />
             </div>
-            <div id="uploadFile">
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white custom-fileInput">Upload Foto</label>
-                <i class="bi bi-upload"></i>
-                <input class="fileInput" type="file" @change="handleFileUpload" accept="image/*" />
+                <input type="file" @change="handleFileUpload" accept="image/*" />
                 <div v-if="imagePreview" class="mt-3">
                     <img :src="imagePreview" alt="Uploaded Image" class="max-w-xs h-auto mx-auto image-preview" />
                 </div>
-            </div>
             <button class="btn-card" type="submit">Uploaden</button>
         </form>
+        </div>
     </div>
 
 

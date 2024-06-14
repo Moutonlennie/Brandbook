@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1 class="title">Upload Iconen</h1>
+        <div id="formulier-container">
         <form @submit.prevent="submitForm">
             <div>
                 <label for="title_inp">Titel:</label><br>
@@ -16,6 +17,7 @@
             </div>
             <button class="btn-card" type="submit">Uploaden</button>
         </form>
+        </div>
     </div>
 
 

@@ -1,10 +1,11 @@
 <template>
     <div>
         <h1 class="title">Upload Gebruik</h1>
+        <div id="formulier-container">
         <form @submit.prevent="submitForm">
             <div>
                 <label for="description_inp">Beschrijving:</label><br>
-                <textarea type="text" id="description_inp" v-model="description" row="20" col="10" required />
+                <textarea type="text" id="description_inp" v-model="description" rows="8" cols="35" required />
             </div>
             <div>
                 <label for="pagina">Kies je pagina:</label>
@@ -36,6 +37,7 @@
             </div>
             <button class="btn-card" type="submit">Uploaden</button>
         </form>
+    </div>
     </div>
 </template>
 
