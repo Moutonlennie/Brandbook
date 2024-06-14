@@ -2,9 +2,8 @@
 
 //Navigatie
 .nav {
-    // position: fixed;
     background: rgb(222,230,241);
-    background: linear-gradient(74deg, rgba(222,230,241,1) 6%, rgba(251,253,252,1) 76%);
+    background: linear-gradient(74deg, rgba(222,230,241,1) 12%, rgba(232,236,241,1) 56%, rgba(251,253,252,1) 97%);
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -50,7 +49,7 @@
 
     img {
         width: auto;
-        height: 50px;
+        height: 30px;
     }
 }
 
