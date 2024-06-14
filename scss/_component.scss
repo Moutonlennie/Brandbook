@@ -3,8 +3,8 @@
 //Navigatie
 .nav {
     // position: fixed;
-    background: rgb(246,250,249);
-    background: linear-gradient(74deg, rgba(246,250,249,1) 51%, rgba(251,253,252,1) 92%);
+    background: rgb(222,230,241);
+    background: linear-gradient(74deg, rgba(222,230,241,1) 6%, rgba(251,253,252,1) 76%);
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -14,11 +14,13 @@
 
     ul {
         list-style-type: none;
-        transform: translateY(50%);
+        transform: translate(-50%), -50%;
+        display: flex; // Maak de lijst een flex container
+        align-items: center; // Verticaal centreren
 
         li {
             display: inline-block;
-            transform: translateY(-50%);
+            margin-right: 10px; // Optioneel: voeg wat ruimte tussen de lijstitems toe
             
             a {
                 text-decoration: none;
@@ -48,7 +50,7 @@
 
     img {
         width: auto;
-        height: 25px;
+        height: 50px;
     }
 }
 
@@ -81,8 +83,8 @@ footer {
         border-radius: 15px;
         width: 312px;
         height: auto;
-        box-shadow: 5px 10px 12px #c8c8c8;
-        margin: 20px;
+        box-shadow: 0 4px 12px #c8c8c8;
+        margin: 20px 0;
         color: $secondary;
     
         #card-text {

@@ -28,7 +28,7 @@ export default {
 <template>
         <nav class="nav">
         <div>
-            <img class="img-logoNav" src="@/assets/logo_icoon.png" alt="logo">
+            <img class="img-logoNav" src="@/assets/test.png" alt="logo">
         </div>
         <ul>
             <li class="link" v-for="navItem in navItems" :key="navItem.name" >
