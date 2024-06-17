@@ -42,7 +42,13 @@ export default {
       <div class="page">
         <div id="brandbook-right">
           <div id="logo">
-            <h1>Roll-up banners</h1>
+            <div id="logo-titel">
+                        <h1>Roll-up banners</h1>
+                        <div id="search">
+                            <p>Search</p>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
             <div v-if="rollUpBanners.length > 0">
                         <div v-for="rollUpBanner of rollUpBanners" :key="rollUpBanner.id">
                             <div id="container-card">

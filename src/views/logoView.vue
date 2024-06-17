@@ -5,7 +5,13 @@
         <div class="page">
             <div id="brandbook-right">
                 <div id="logo">
-                    <h1>Logo</h1>
+                    <div id="logo-titel">
+                        <h1>Logo</h1>
+                        <div id="search">
+                            <p>Search</p>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
                     <h2 id="hoofdlogo">Hoofdlogo</h2>
                     
                     <div id="container-card">

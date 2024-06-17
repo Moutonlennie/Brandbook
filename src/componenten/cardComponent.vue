@@ -66,10 +66,7 @@ export default {
       document.body.removeChild(link);
     },
     deleteCard() {
-      // Verwijder de kaart uit de lijst of store
-      // Hier moet je logica toevoegen om de kaart te verwijderen
-      // Bijvoorbeeld:
-      this.store.deleteLogo(this.logo.id); // Verwijder de kaart uit de store
+      this.store.deleteLogo(this.logo.id);
     },
     convertBase64ToBlobUrl(base64) {
       try {

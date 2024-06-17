@@ -19,7 +19,13 @@ export default {
         <div class="page">
             <div id="brandbook-right">
                 <div id="logo">
-                    <h1>Kleuren</h1>
+                    <div id="logo-titel">
+                        <h1>Kleuren</h1>
+                        <div id="search">
+                            <p>Search</p>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
                     <h2>Merkkleuren</h2>
                     <h3>Primaire</h3>
                     <div id="kleuren-container">

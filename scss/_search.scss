@@ -1,0 +1,27 @@
+@use 'base' as *;
+
+#logo-titel {
+    display: flex;
+
+    h1{
+        width: 80%;
+    }
+    
+    #search {
+        margin-top: 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+        padding: 0.5rem;
+        border-radius: 25px;
+        border: 2px solid $primary;
+
+        p {
+            color: rgb(209, 209, 209);
+        }
+
+        .bi-search {
+            color: $primary;
+        }
+    }
+}

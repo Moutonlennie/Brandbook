@@ -19,7 +19,13 @@ export default {
         <div class="page">
             <div id="brandbook-right">
                 <div id="logo">
-                    <h1>Typografie</h1>
+                    <div id="logo-titel">
+                        <h1>Typografie</h1>
+                        <div id="search">
+                            <p>Search</p>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
                     <div id="koppen">
                         <div id="titel">
                             <h2>Koppen</h2>

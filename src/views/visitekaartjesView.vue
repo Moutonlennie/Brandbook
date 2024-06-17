@@ -42,7 +42,13 @@ export default {
       <div class="page">
         <div id="brandbook-right">
           <div id="logo">
-            <h1>Visitekaartjes</h1>
+            <div id="logo-titel">
+                        <h1>Visitekaartjes</h1>
+                        <div id="search">
+                            <p>Search</p>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
             <div v-if="visitekaartjes.length > 0">
                         <div v-for="visitekaartje of visitekaartjes" :key="visitekaartje.id">
                             <div id="container-card">

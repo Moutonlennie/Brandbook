@@ -42,7 +42,13 @@ export default {
       <div class="page">
         <div id="brandbook-right">
           <div id="logo">
-            <h1>Templates</h1>
+            <div id="logo-titel">
+                        <h1>Templates</h1>
+                        <div id="search">
+                            <p>Search</p>
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
             <div v-if="templates.length > 0">
                         <div v-for="template of templates" :key="template.id">
                             <div id="container-card">
