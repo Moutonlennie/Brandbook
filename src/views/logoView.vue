@@ -13,9 +13,7 @@
                                 <cardComponent :logo="logo" />
                             </div>
                         </div>
-                        <div v-else>
-                            <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
-                        </div>
+                        <cardToevoegenComponent @click="navigateToAddLogo"/>
                     </div>
                     <br>
                     <h2 id="varianten">Varianten</h2>
@@ -25,37 +23,9 @@
                                 <cardComponent :logo="logo" />
                             </div>
                         </div>
-                        <div v-else>
-                            <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
-                        </div>
+                        <cardToevoegenComponent @click="navigateToAddLogo"/>
                     </div>
-                    <br>
-                    <h2 id="gebruik">Gebruik</h2>
-                    <div id="gebruik">
-                        <i class="bi bi-check"></i>
-                        <h3>Do's</h3>
-                    </div>
-                    <div v-if="welGebruik.length > 0">
-                        <div v-for="toepassing of welGebruik" :key="toepassing.id">
-                            <div id="container-card">
-                                <cardGebruik  :description="toepassing.description" :imageSrc="toepassing.image"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <p>Geen card gevonden. <a href="http://localhost:5173/addgebruik">Voeg gebruik toe</a></p>
-                    </div>
-                    <div id="gebruik">
-                        <i class="bi bi-x"></i>
-                        <h3>Don'ts</h3>
-                    </div>
-                    <div v-if="nietGebruik.length > 0">
-                        <div v-for="toepassing of nietGebruik" :key="toepassing.id">
-                            <div id="container-card">
-                                <cardGebruik  :description="toepassing.description" :imageSrc="toepassing.image"/>
-                            </div>
-                        </div>
-                    </div>
+                    <gebruikComponent :welGebruik="welGebruik" :nietGebruik="nietGebruik"/>
                 </div>
             </div>
         </div>
@@ -65,6 +35,7 @@
 <script>
 import cardComponent from '@/componenten/cardComponent.vue';
 import gebruikComponent from '@/componenten/gebruikComponent.vue';
+import cardToevoegenComponent from '@/componenten/cardToevoegenComponent.vue';
 import cardGebruik from '@/componenten/cardGebruik.vue';
 import { logoStore } from '@/stores/logoStore';
 import { gebruikStore } from '@/stores/gebruikStore';
@@ -73,6 +44,7 @@ export default {
     components: {
         cardComponent,
         gebruikComponent,
+        cardToevoegenComponent,
         cardGebruik
     },
 
@@ -131,6 +103,11 @@ export default {
                 console.log(this.welGebruik);
             }
         }
+    },
+    methods: {
+    navigateToAddLogo() {
+      this.$router.push('/addlogo');
     }
+  }
 }
 </script>

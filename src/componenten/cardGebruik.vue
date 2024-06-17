@@ -1,12 +1,11 @@
 <template>
-    <div id="container-card">
       <div class="cards">
         <img class="card-img" :src="imageSrc" :alt="imageAlt">
         <div id="card-text">
           <p>{{ description }}</p>
         </div>
       </div>
-    </div>
+
   </template>
   
   <script>

@@ -70,6 +70,18 @@ footer {
 
 
 //Cards algemeen
+#card-toevoegen {
+    border: 1px dotted rgb(83, 81, 81);
+    border-radius: 15px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.bi-plus-lg {
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    padding: 5rem;
+}
 #container-card {
     display: flex;
     flex-wrap: wrap;
@@ -96,6 +108,7 @@ footer {
             margin-left: 1rem;
             font-size: 0.8rem;
         }
+
         .card-img {
             width: 100%;
             border-radius: 15px 15px 0 0;
@@ -110,8 +123,24 @@ footer {
 //Card gebruik
 #gebruik {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
+
+    #donts {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+    }
+
+    .flexItem {
+        display: flex;
+    }
+
+    .do {
+        width: 80%;
+    }
     .bi-check {
         font-size: 1.5rem;
         color: green;
