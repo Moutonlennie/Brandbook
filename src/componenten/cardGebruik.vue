@@ -5,7 +5,6 @@
           <p>{{ description }}</p>
         </div>
       </div>
-
   </template>
   
   <script>
