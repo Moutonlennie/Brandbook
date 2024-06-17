@@ -35,13 +35,13 @@
         <div v-if="logos.length > 0">
             <div v-for="logo of logos" :key="logo.id">
                 <RouterLink :to="'/edit/' + logo.id">
-                    <h1>{{ logo.title }}</h1>
+                    
                 </RouterLink>
 
             </div>
         </div>
         <div v-else>
-            <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+            <p></p>
         </div>
     </div>
 

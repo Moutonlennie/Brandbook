@@ -1,5 +1,5 @@
 <template>
-      <div class="cards">
+      <div class="cardGebruik">
         <img class="card-img" :src="imageSrc" :alt="imageAlt">
         <div id="card-text">
           <p>{{ description }}</p>

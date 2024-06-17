@@ -121,6 +121,25 @@ footer {
 }
 
 //Card gebruik
+.cardGebruik {
+    position: relative;
+    border-radius: 15px;
+    border: 1px solid rgb(232, 227, 227);
+    width: 312px;
+    height: auto;
+    margin: 0 20px 0 0;
+    color: $secondary;
+    
+    p {
+        margin: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .card-img {
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+    }
+}
 #gebruik {
     display: flex;
     flex-wrap: wrap;
