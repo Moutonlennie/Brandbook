@@ -17,10 +17,6 @@
         </div>
     </main>
 
-    <div v-if="isAdmin">
-                You are an admin.
-    </div>
-
     <div id="container-card">
         <div id="card">
             <div class="cards">
@@ -79,26 +75,10 @@
 
 <script>
 export default {
-    data() {
-        return {
-            isAdmin: false
-        };
-    },
     methods: {
         navigateTo(route) {
             this.$router.push({ path: `/${route}` });
         },
-        checkUserRole() {
-            const userData = localStorage.getItem('user');
-            if (userData) {
-                const userObject = JSON.parse(userData);
-                this.isAdmin = userObject.role === 'admin';
-            }
-        }
     },
-    mounted() {
-        // Check the user role when the component is mounted
-        this.checkUserRole();
-    }
 }
 </script>

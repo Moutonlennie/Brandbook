@@ -7,6 +7,7 @@
                 <div id="logo">
                     <h1>Logo</h1>
                     <h2 id="hoofdlogo">Hoofdlogo</h2>
+                    
                     <div id="container-card">
                         <div v-if="hoofdLogos.length > 0">
                             <div v-for="logo of hoofdLogos" :key="logo.id">
@@ -14,7 +15,7 @@
                             </div>
                         </div>
                         <cardToevoegenComponent @click="navigateToAddLogo"/>
-                    </div>
+                </div>
                     <br>
                     <h2 id="varianten">Varianten</h2>
                     <div id="container-card">
@@ -60,7 +61,8 @@ export default {
             varientLogos: [],
             welGebruik: [],
             nietGebruik: [],
-            gebruik: []
+            gebruik: [],
+            isAdmin: false
         }
     },
     computed: {
@@ -107,7 +109,20 @@ export default {
     methods: {
     navigateToAddLogo() {
       this.$router.push('/addlogo');
+    },
+    navigateTo(route) {
+        this.$router.push({ path: `/${route}` });
+        },
+        checkUserRole() {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                const userObject = JSON.parse(userData);
+                this.isAdmin = userObject.role === 'admin';
+            }
+        }
+  },
+  mounted() {
+        this.checkUserRole();
     }
-  }
 }
 </script>

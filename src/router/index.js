@@ -55,27 +55,27 @@ const router = createRouter({
                     redirect: '/brandbook/logo'
                 },
                 {
-                    path: 'logo',
+                    path: '/brandbook/logo',
                     component: logoView,
                     name: "Logo"
                 },
                 {
-                    path: 'kleuren',
+                    path: '/brandbook/kleuren',
                     component: kleurenView,
                     name: "Kleuren"
                 },
                 {
-                    path: 'typografie',
+                    path: '/brandbook/typografie',
                     component: typografieView,
                     name: "Typografie"
                 },
                 {
-                    path: 'elementen',
+                    path: '/brandbook/elementen',
                     component: elementenView,
                     name: "Elementen"
                 },
                 {
-                    path: 'iconen',
+                    path: '/brandbook/iconen',
                     component: iconenView,
                     name: "Iconen"
                 }
