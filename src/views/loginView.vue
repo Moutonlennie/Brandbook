@@ -25,7 +25,6 @@
             <img src="@/assets/login_image.png" alt="Login afbeelding">
         </div>
     </div>
-
   </template>
   
   <script>
