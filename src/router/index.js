@@ -15,6 +15,8 @@ import addRollUpBanner from '@/views/backend/rollUpBannersBackView.vue';
 import addTemplates from '@/views/backend/templatesBackView.vue';
 import addGebruik from '@/views/backend/gebruikBackView.vue';
 
+import addPdf from '@/views/backend/addPdfBackVieuw.vue'
+
 // Importeer de subpagina componenten
 import elementenView from '@/views/elementenView.vue';
 import iconenView from '@/views/iconenView.vue';
@@ -158,6 +160,11 @@ const router = createRouter({
             component: addGebruik,
             name: "addGebruik"
         },
+        {
+            path: '/edit/:id',
+            name: 'addPdf',
+            component: addPdf
+          },
         { 
             path: "/:notFound(.*)",
             component: pageNotFound,

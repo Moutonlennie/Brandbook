@@ -11,9 +11,15 @@
 
     <main class="mainHome">
         <div id="home-intro">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat</p>
         </div>
     </main>
+
+    <div v-if="isAdmin">
+                You are an admin.
+    </div>
 
     <div id="container-card">
         <div id="card">
@@ -64,17 +70,35 @@
                 </div>
                 <button @click="navigateTo('brandbook/iconen')" class="btn-card">Ontdek</button>
             </div>
+
+ 
+
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            isAdmin: false
+        };
+    },
     methods: {
         navigateTo(route) {
             this.$router.push({ path: `/${route}` });
+        },
+        checkUserRole() {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                const userObject = JSON.parse(userData);
+                this.isAdmin = userObject.role === 'admin';
+            }
         }
+    },
+    mounted() {
+        // Check the user role when the component is mounted
+        this.checkUserRole();
     }
 }
 </script>
-

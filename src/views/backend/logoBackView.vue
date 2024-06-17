@@ -3,8 +3,8 @@
         <h1 class="title">Upload Logo</h1>
         <div id="formulier-container">
             <form @submit.prevent="submitForm">
-                    <label for="title_inp">Titel:</label><br>
-                    <input type="text" id="title_inp" v-model="title" required />
+                <label for="title_inp">Titel:</label><br>
+                <input type="text" id="title_inp" v-model="title" required />
                 <div id="type">
                     <label for="type">Type:</label><br>
                     <select id="type" v-model="type" required>
@@ -32,6 +32,17 @@
                 <button class="btn-card" type="submit">Uploaden</button>
             </form>
         </div>
+        <div v-if="logos.length > 0">
+            <div v-for="logo of logos" :key="logo.id">
+                <RouterLink :to="'/edit/' + logo.id">
+                    <h1>{{ logo.title }}</h1>
+                </RouterLink>
+
+            </div>
+        </div>
+        <div v-else>
+            <p>Geen card gevonden. <a href="http://localhost:5173/addlogo">Voeg een logo toe</a></p>
+        </div>
     </div>
 
 
@@ -44,12 +55,30 @@ export default {
         const store = logoStore()
         return {
             store,
+            logos: [],
             title: "",
             type: "",
             varient: "",
             image: null,
             imagePreview: null
         }
+    },
+    computed: {
+        logosFromStore() {
+            return this.store.logos;
+        },
+    },
+    async created() {
+        await this.store.fetchLogos();
+    },
+    watch: {
+        logosFromStore(newValue) {
+            if (newValue) {
+                this.logos = newValue;
+                this.hoofdLogos = this.filteredHoofdLogos;
+                this.varientLogos = this.filteredVarientLogos;
+            }
+        },
     },
     methods: {
         submitForm() {
